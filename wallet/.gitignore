@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Build artifacts
+dist/
+build/
+.cache/
+.next/
+out/
+*.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.secret
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
+
+# Coverage/testing
+coverage/
+.nyc_output/
+
+# Misc
+*.tgz
+*.bak
+*.tmp
