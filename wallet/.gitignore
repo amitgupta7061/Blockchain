@@ -45,3 +45,6 @@ coverage/
 *.tgz
 *.bak
 *.tmp
+
+#data
+data.txt
