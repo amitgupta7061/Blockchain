@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary crypto gradient */
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary system */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    /* Muted system */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Accent crypto cyan */
+    --accent: 191 95% 77%;
+    --accent-foreground: 240 5.9% 10%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 258 90% 66%;
+
+    /* Crypto currency colors */
+    --bitcoin: 38 100% 52%;
+    --ethereum: 229 76% 66%;
+    --solana: 271 76% 53%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%), hsl(271 76% 53%));
+    --gradient-accent: linear-gradient(135deg, hsl(191 95% 77%), hsl(229 76% 66%));
+    --gradient-bitcoin: linear-gradient(135deg, hsl(38 100% 52%), hsl(45 100% 60%));
+    --gradient-ethereum: linear-gradient(135deg, hsl(229 76% 66%), hsl(241 76% 76%));
+    --gradient-solana: linear-gradient(135deg, hsl(271 76% 53%), hsl(191 95% 77%));
+    
+    /* Shadows and glows */
+    --shadow-glow: 0 0 20px hsl(258 90% 66% / 0.3);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-elevated: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme base */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    /* Dark cards with subtle gradient */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    /* Dark popover */
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Bright primary for dark theme */
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Dark secondary */
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Dark muted */
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Bright accent for dark theme */
+    --accent: 191 95% 77%;
+    --accent-foreground: 240 10% 3.9%;
+
+    /* Dark destructive */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Dark borders with subtle glow */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 258 90% 66%;
+
+    /* Enhanced dark shadows */
+    --shadow-glow: 0 0 30px hsl(258 90% 66% / 0.5);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 1px 2px -1px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -2px hsl(0 0% 0% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Crypto specific components */
+  .crypto-card {
+    @apply bg-card border border-border rounded-xl shadow-[var(--shadow-card)] backdrop-blur-sm;
+  }
+  
+  .crypto-card-elevated {
+    @apply bg-card border border-border rounded-xl shadow-[var(--shadow-elevated)] backdrop-blur-sm;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-bitcoin {
+    background: var(--gradient-bitcoin);
+  }
+  
+  .gradient-ethereum {
+    background: var(--gradient-ethereum);
+  }
+  
+  .gradient-solana {
+    background: var(--gradient-solana);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .wallet-button {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 font-medium transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+  
+  .wallet-button-primary {
+    @apply wallet-button gradient-primary text-primary-foreground glow-primary;
+  }
+  
+  .wallet-button-secondary {
+    @apply wallet-button bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+}
