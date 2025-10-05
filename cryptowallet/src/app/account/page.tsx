@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
 import React, { useState, FC, Dispatch, SetStateAction } from 'react';
 
 // --- SVG Icon Component ---
@@ -31,12 +32,30 @@ interface ScreenProps {
 // --- Create Wallet Screen Component ---
 const CreateWalletScreen: FC<ScreenProps> = ({ setMode }) => {
   const [username, setUsername] = useState('');
+  const router = useRouter();
 
-  const handleCreate = (e: React.FormEvent) => {
+  const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would generate a wallet and seed phrase here.
-    console.log("Creating wallet for user:", username);
-    alert(`Wallet for ${username} would be created. (This is a demo)`);
+    
+    try {
+      const res = await fetch("/api/createaccount", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username }),
+      });
+
+      const data = await res.json();
+      console.log("Response:", data);
+
+      if(res.ok){
+        router.push('/dashboard');
+      }
+
+    } catch (err) {
+      console.error("Error creating account:", err);
+    }
   };
 
   return (
@@ -94,12 +113,37 @@ const LoginWalletScreen: FC<ScreenProps> = ({ setMode }) => {
     }
   };
 
-  const handleImport = (e: React.FormEvent) => {
+  const handleImport = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would validate and import the wallet here.
-    console.log("Importing wallet with seed phrase:", seedPhrase.join(' '));
-     alert(`Wallet with seed phrase "${seedPhrase.join(' ')}" would be imported. (This is a demo)`);
+
+    try {
+      const phrase = seedPhrase.join(" ").trim();
+
+      const res = await fetch("/api/importaccount", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ seedPhrase: phrase }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to import account");
+      }
+
+      console.log("Imported wallet:", data);
+
+      localStorage.setItem("wallet", JSON.stringify(data));
+      window.location.href = "/dashboard";
+
+    } catch (err: any) {
+      console.error("Error importing account:", err.message);
+      alert(err.message || "Something went wrong while importing");
+    }
   };
+
 
   return (
     <div className="w-full animate-fade-in">

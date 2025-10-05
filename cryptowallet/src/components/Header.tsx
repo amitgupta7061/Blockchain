@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 
 export default function Header() {
@@ -7,9 +8,9 @@ export default function Header() {
       {/* Header */}
       <header className="p-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
+          <Link href={'/'} className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
             CryptoWallet
-          </div>
+          </Link>
           <ThemeToggle />
         </div>
       </header>
