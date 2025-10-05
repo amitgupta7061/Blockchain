@@ -12,8 +12,12 @@ model User {
   username  String   @unique
   createdAt DateTime @default(now())
 
-  solKey    String   // Solana public key
-  ethKey    String   // Ethereum public key
-  btcKey    String   // Bitcoin public key
+  solKey    String   
+  ethKey    String   
+  btcKey    String   
+
+  soladd    String
+  ethadd    String
+  btcadd    String
 }
 
