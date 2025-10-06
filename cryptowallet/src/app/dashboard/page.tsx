@@ -1,5 +1,5 @@
 "use client";
-import { MarsStrokeIcon, RadioReceiver, SendHorizonal } from 'lucide-react';
+import { LogOut, MarsStrokeIcon, RadioReceiver, SendHorizonal } from 'lucide-react';
 import Image from 'next/image';
 // src/components/Dashboard.tsx
 import React, { useState, useMemo, useCallback } from 'react';
@@ -305,10 +305,21 @@ const Dashboard: React.FC = () => {
                         <span className='font-medium'>Receive Funds</span>
                     </button>
 
+                    <button
+                        onClick={() => {
+                            localStorage.removeItem("wallet");
+                            window.location.href = '/';
+                        }}
+                        className={`w-full text-left p-3 rounded-lg flex items-center space-x-3 transition-colors hover:bg-sidebar-accent/50 text-sidebar-foreground}`}
+                    >
+                        <LogOut />
+                        <span className='font-medium'>Logout</span>
+                    </button>
+
                     <Separator className="bg-sidebar-border" />
                     
                     {/* User Addresses Section (Enhanced) */}
-                    <div className="text-sm font-semibold text-sidebar-accent mb-3">My Public Addresses</div>
+                    <div className="text-sm font-semibold mb-3">My Public Addresses</div>
                     
                     <div className="space-y-1 bg-sidebar-accent/10 p-3 rounded-lg border border-sidebar-accent/20">
                         <AddressDisplay 

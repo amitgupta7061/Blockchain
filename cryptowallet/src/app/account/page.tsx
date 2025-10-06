@@ -49,7 +49,9 @@ const CreateWalletScreen: FC<ScreenProps> = ({ setMode }) => {
       const data = await res.json();
       console.log("Response:", data);
 
+
       if(res.ok){
+        localStorage.setItem("wallet", JSON.stringify(data));
         router.push('/dashboard');
       }
 

@@ -1,4 +1,4 @@
-import bip39 from 'bip39';
+import * as bip39 from 'bip39';
 import { prisma } from "@/src/lib/prisma";
 import { deriveBitcoinWallet, deriveEthereumWallet, deriveSolanaWallet } from "@/src/lib/wallet";
 import { NextResponse } from "next/server";
