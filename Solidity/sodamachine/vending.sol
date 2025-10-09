@@ -1,13 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
+import "./interface.sol";
 
 contract vendingMachine {
     uint sodaCnt; 
     address owner;
+    IsodaPrice public sodaAddress;
 
-    constructor(uint num) {
+    constructor(uint num, address _sodaAddress) {
         sodaCnt = num;
         owner = msg.sender;
+        sodaAddress = IsodaPrice(_sodaAddress);
     }
 
     modifier ownership(){
@@ -15,9 +18,24 @@ contract vendingMachine {
         _;
     }
 
+    struct CustomerDetails{
+        uint purchasedCnt;
+        uint timestamp;
+        bool isVip;
+    }
+
+    mapping (address => CustomerDetails) public purchasedList; 
+
     function buy() public payable {
-        require(msg.value == 1 ether, "You should have 1 ether");
+        require(msg.value == sodaAddress.getPrice(), "You should have 1 ether");
         require(sodaCnt > 0, "Out of Stock");
+        
+        CustomerDetails storage customer = purchasedList[msg.sender];
+
+        customer.purchasedCnt += 1;
+        customer.timestamp = block.timestamp;
+        if(customer.purchasedCnt == 10) customer.isVip = true;
+
         sodaCnt -= 1;
     }
 
