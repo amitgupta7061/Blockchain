@@ -1,7 +1,7 @@
 "use client";
-
 import { useRouter } from 'next/navigation';
 import React, { useState, FC, Dispatch, SetStateAction } from 'react';
+import { toast } from "sonner"
 
 // --- SVG Icon Component ---
 const WalletIcon: FC<{ className?: string }> = ({ className = "w-16 h-16" }) => (
@@ -132,7 +132,8 @@ const LoginWalletScreen: FC<ScreenProps> = ({ setMode }) => {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.message || "Failed to import account");
+        toast.error("Failed to Import");
+        return;
       }
 
       console.log("Imported wallet:", data);
@@ -163,7 +164,7 @@ const LoginWalletScreen: FC<ScreenProps> = ({ setMode }) => {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {seedPhrase.map((word, index) => (
             <div key={index} className="relative">
-              <span className="absolute left-2 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">{index + 1}.</span>
+              <span className="absolute left-2 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">{index + 1}. </span>
               <input
                 type="text"
                 value={word}

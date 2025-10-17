@@ -61,7 +61,7 @@
     --popover-foreground: 240 10% 3.9%;
 
     /* Primary crypto gradient */
-    --primary: 258 90% 66%;
+    --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
 
     /* Secondary system */
@@ -73,7 +73,7 @@
     --muted-foreground: 240 3.8% 46.1%;
 
     /* Accent crypto cyan */
-    --accent: 191 95% 77%;
+    --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
 
     /* Destructive */
@@ -83,7 +83,7 @@
     /* Borders and inputs */
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 258 90% 66%;
+    --ring: 240 10% 3.9%;
 
     /* Crypto currency colors */
     --bitcoin: 38 100% 52%;
@@ -102,7 +102,7 @@
     --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
     --shadow-elevated: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -119,6 +119,16 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --chart-1: 12 76% 61%;
+
+    --chart-2: 173 58% 39%;
+
+    --chart-3: 197 37% 24%;
+
+    --chart-4: 43 74% 66%;
+
+    --chart-5: 27 87% 67%;
   }
 
   .dark {
@@ -135,8 +145,8 @@
     --popover-foreground: 0 0% 98%;
 
     /* Bright primary for dark theme */
-    --primary: 258 90% 66%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
 
     /* Dark secondary */
     --secondary: 240 3.7% 15.9%;
@@ -147,17 +157,17 @@
     --muted-foreground: 240 5% 64.9%;
 
     /* Bright accent for dark theme */
-    --accent: 191 95% 77%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
 
     /* Dark destructive */
-    --destructive: 0 72% 50%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     /* Dark borders with subtle glow */
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 258 90% 66%;
+    --ring: 240 4.9% 83.9%;
 
     /* Enhanced dark shadows */
     --shadow-glow: 0 0 30px hsl(258 90% 66% / 0.5);
@@ -171,6 +181,11 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
