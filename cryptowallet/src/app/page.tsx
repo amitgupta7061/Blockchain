@@ -222,9 +222,9 @@ export default function Welcome() {
 
       <footer className="w-full text-center p-4 text-muted-foreground text-sm">
         <div className="flex justify-center items-center space-x-6 mb-2">
-          <a href="#" aria-label="Twitter" className="hover:text-foreground transition-colors"><TwitterIcon className="w-5 h-5" /></a>
-          <a href="#" aria-label="Github" className="hover:text-foreground transition-colors"><GithubIcon className="w-5 h-5" /></a>
-          <a href="#" className="hover:text-foreground transition-colors text-xs font-semibold uppercase tracking-wider">Contact Us</a>
+          <a href="https://x.com/AmitGup43573754" aria-label="Twitter" className="hover:text-foreground transition-colors"><TwitterIcon className="w-5 h-5" /></a>
+          <a href="https://github.com/amitgupta7061" aria-label="Github" className="hover:text-foreground transition-colors"><GithubIcon className="w-5 h-5" /></a>
+          <a href="mailto:amitgupta561710@gmail.com" className="hover:text-foreground transition-colors text-xs font-semibold uppercase tracking-wider">Contact Us</a>
         </div>
         <p className="mt-4">&copy; 2025 CryptoWallet. All Rights Reserved.</p>
       </footer>
